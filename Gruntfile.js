@@ -111,10 +111,13 @@ module.exports = function(grunt) {
   grunt.registerTask('html', ['jade']);
   grunt.registerTask('js', ['coffee', 'jshint']);
   grunt.registerTask('css', ['stylus']);
-  grunt.registerTask('default', ['html', 'js', 'css']);
 
   //grunt.registerTask('utest2', ['exec:jasmine']);
   grunt.registerTask('utest', ['jasmine:phantomjs']);
+
+  grunt.registerTask('default', ['html', 'js', 'css', 'utest']);
+
+  
 
   
 
