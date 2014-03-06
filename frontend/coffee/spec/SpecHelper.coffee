@@ -1,4 +1,4 @@
-beforeEach ->
+beforeEach () ->
 	jasmine.addMatchers toBePlaying: () ->
 		compare: (actual, expected) ->
 			player = actual
