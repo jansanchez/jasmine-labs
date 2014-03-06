@@ -15,3 +15,9 @@ sudo npm install
 grunt
 ```
 
+
+### Run watcher
+
+```
+grunt watch
+```
