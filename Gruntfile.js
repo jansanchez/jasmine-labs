@@ -93,6 +93,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-contrib-jasmine');
+
 
   // Run Default task(s).
   grunt.registerTask('html', ['jade']);
