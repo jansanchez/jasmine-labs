@@ -77,6 +77,11 @@ module.exports = function(grunt) {
           ext: '.css'
         }]
       }
+    },
+    exec: {
+      jasmine: {
+        command: 'phantomjs public/js/libs/run-jasmine.js html/SpecRunner.html'
+      }
     }
   });
 
@@ -86,6 +91,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-stylus');
+  grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
 
   // Run Default task(s).
   grunt.registerTask('html', ['jade']);
@@ -93,6 +100,7 @@ module.exports = function(grunt) {
   grunt.registerTask('css', ['stylus']);
   grunt.registerTask('default', ['html', 'js', 'css']);
 
+  grunt.registerTask('utest', ['exec:jasmine']);
 
 
 };
