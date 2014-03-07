@@ -21,3 +21,9 @@ Player.prototype.resume = function() {
 Player.prototype.makeFavorite = function() {
   this.currentlyPlayingSong.persistFavoriteStatus(true);
 };
+
+Player.prototype.stop = function(song) {
+  this.isPlaying = false;
+  this.previousSong = song;
+  this.currentlyPlayingSong = null;
+};

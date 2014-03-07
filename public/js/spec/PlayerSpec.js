@@ -40,4 +40,18 @@ describe("Player", function() {
       }).toThrowError("song is already playing");
     });
   });
+  describe("when song has been stopped", function() {
+    it("don't should be currently playing", function() {
+      player.stop(song);
+      return expect(player.isPlaying).toBeFalsy();
+    });
+    it("currently playing song should be null", function() {
+      player.stop(song);
+      return expect(player.currentlyPlayingSong).toBeNull();
+    });
+    return it("the previous song should be equal to song", function() {
+      player.stop(song);
+      return expect(player.previousSong).toEqual(song);
+    });
+  });
 });

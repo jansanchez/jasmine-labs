@@ -60,4 +60,21 @@ describe "Player", () ->
 
 		return
 
+
+	describe "when song has been stopped", () ->
+		it "don't should be currently playing", () ->
+			player.stop song
+
+			expect(player.isPlaying).toBeFalsy()
+
+		it "currently playing song should be null", () ->
+			player.stop song
+
+			expect(player.currentlyPlayingSong).toBeNull()
+
+		it "the previous song should be equal to song", () ->
+			player.stop song
+
+			expect(player.previousSong).toEqual song
+
 	return

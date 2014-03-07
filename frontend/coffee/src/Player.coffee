@@ -18,3 +18,9 @@ Player::resume = () ->
 Player::makeFavorite = () ->
 	@currentlyPlayingSong.persistFavoriteStatus true
 	return
+
+Player::stop = (song) ->
+	@isPlaying = false
+	@previousSong = song
+	@currentlyPlayingSong = null
+	return
