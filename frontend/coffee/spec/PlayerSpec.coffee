@@ -38,7 +38,7 @@ describe "Player", () ->
 
 		return
 
-	
+
 	# demonstrates use of spies to intercept and test method calls
 	it "tells the current song if the user has made it a favorite", () ->
 		spyOn song, "persistFavoriteStatus"
@@ -47,7 +47,7 @@ describe "Player", () ->
 		expect(song.persistFavoriteStatus).toHaveBeenCalledWith true
 		return
 
-	
+
 	#demonstrates use of expected exceptions
 	describe "#resume", () ->
 		it "should throw an exception if song is already playing", () ->

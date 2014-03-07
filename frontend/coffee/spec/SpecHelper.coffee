@@ -5,4 +5,3 @@ beforeEach () ->
 			player = actual
 			pass : player.currentlyPlayingSong is expected and player.isPlaying
 	return
-
