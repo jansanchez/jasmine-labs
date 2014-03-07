@@ -1,18 +1,20 @@
+
 Player = () ->
+
 Player::play = (song) ->
 	@currentlyPlayingSong = song
 	@isPlaying = true
 	return
 
-Player::pause = ->
+Player::pause = () ->
 	@isPlaying = false
 	return
 
-Player::resume = ->
+Player::resume = () ->
 	throw new Error("song is already playing")  if @isPlaying
 	@isPlaying = true
 	return
 
-Player::makeFavorite = ->
+Player::makeFavorite = () ->
 	@currentlyPlayingSong.persistFavoriteStatus true
 	return

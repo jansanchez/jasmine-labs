@@ -1,12 +1,14 @@
+
 describe "Player", () ->
 	player = undefined
 	song = undefined
+
 	beforeEach () ->
 		player = new Player()
 		song = new Song()
 		return
 
-	it "should be able to play a Song", () ->
+	it "should be able to play a Song(debe ser capaz de reproducir una canción)", () ->
 		player.play song
 		expect(player.currentlyPlayingSong).toEqual song
 		
@@ -14,21 +16,22 @@ describe "Player", () ->
 		expect(player).toBePlaying song
 		return
 
-	describe "when song has been paused", () ->
+	describe "when song has been paused(cuando la canción está en pausa)", () ->
 		beforeEach () ->
 			player.play song
 			player.pause()
 			return
 
-		it "should indicate that the song is currently paused", () ->
+		it "should indicate that the song is currently paused(debe indicar que la canción está en pausa)", () ->
 			expect(player.isPlaying).toBeFalsy()
 			
 			# demonstrates use of 'not' with a custom matcher
 			expect(player).not.toBePlaying song
 			return
 
-		it "should be possible to resume", () ->
+		it "should be possible to resume(debería ser posible reanudar)", () ->
 			player.resume()
+
 			expect(player.isPlaying).toBeTruthy()
 			expect(player.currentlyPlayingSong).toEqual song
 			return

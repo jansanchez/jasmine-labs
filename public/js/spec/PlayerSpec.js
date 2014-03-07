@@ -6,21 +6,21 @@ describe("Player", function() {
     player = new Player();
     song = new Song();
   });
-  it("should be able to play a Song", function() {
+  it("should be able to play a Song(debe ser capaz de reproducir una canción)", function() {
     player.play(song);
     expect(player.currentlyPlayingSong).toEqual(song);
     expect(player).toBePlaying(song);
   });
-  describe("when song has been paused", function() {
+  describe("when song has been paused(cuando la canción está en pausa)", function() {
     beforeEach(function() {
       player.play(song);
       player.pause();
     });
-    it("should indicate that the song is currently paused", function() {
+    it("should indicate that the song is currently paused(debe indicar que la canción está en pausa)", function() {
       expect(player.isPlaying).toBeFalsy();
       expect(player).not.toBePlaying(song);
     });
-    it("should be possible to resume", function() {
+    it("should be possible to resume(debería ser posible reanudar)", function() {
       player.resume();
       expect(player.isPlaying).toBeTruthy();
       expect(player.currentlyPlayingSong).toEqual(song);
